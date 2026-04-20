@@ -1,12 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration System</title>
-    <link rel="stylesheet" href="./index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Student Registration System to add, edit, delete and manage student records." />
+  <title>Student Registration System</title>
+  <link rel="stylesheet" href="./index.css" />
 </head>
 <body>
-    <script src="./index.js"></script>
+  <header class="header">
+    <h1>Student Registration System</h1>
+    <p>Register student details, edit records, delete records, and save data even after refresh.</p>
+  </header>
+
+  <main class="container">
+    <section class="form-section">
+      <h2>Register Student</h2>
+
+      <form id="studentForm" novalidate>
+        <div class="input-group">
+          <label for="studentName">Student Name</label>
+          <input
+            type="text"
+            id="studentName"
+            placeholder="Enter student name"
+            maxlength="50"
+          />
+          <small class="error" id="nameError"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="studentId">Student ID</label>
+          <input
+            type="text"
+            id="studentId"
+            placeholder="Enter student ID"
+            maxlength="15"
+          />
+          <small class="error" id="idError"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="emailId">Email ID</label>
+          <input
+            type="email"
+            id="emailId"
+            placeholder="Enter email ID"
+            maxlength="60"
+          />
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="contactNo">Contact Number</label>
+          <input
+            type="text"
+            id="contactNo"
+            placeholder="Enter contact number"
+            maxlength="15"
+          />
+          <small class="error" id="contactError"></small>
+        </div>
+
+        <button type="submit" id="submitBtn">Add Student</button>
+      </form>
+    </section>
+
+    <section class="display-section">
+      <h2>Registered Students</h2>
+
+      <div class="table-wrapper" id="tableWrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody">
+            
+          </tbody>
+        </table>
+      </div>
+
+      <p id="emptyMessage">No student records added yet.</p>
+    </section>
+  </main>
+
+  <script src="./index.js"></script>
 </body>
 </html>
